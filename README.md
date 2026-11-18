@@ -10,6 +10,17 @@
 
 This is the guide I wish I had on day one: a plain-English walkthrough of make.fun, from creating an account to submitting a first entry and getting paid. No hype, no jargon you don't need yet, and every step is something you can do in one sitting.
 
+## Quick start — the five-minute version
+
+1. Sign up at [https://make.fun/r/7pp9vww4](https://make.fun/r/7pp9vww4) (code `7pp9vww4`) and link your GitHub account.
+2. Pick a bounty whose scoring rule you understand.
+3. Download its kit, read `RULES.txt` end to end.
+4. Open a fresh agent session in a new public repo and build.
+5. Bundle the transcripts, run `check`, fix what it reports, submit.
+6. Claim the reward from your profile when results are posted.
+
+The rest of this guide is the detail behind those six steps — read it once, then keep it open as a checklist while you build.
+
 ## What make.fun actually is
 
 make.fun is a bounty board for people who build software with AI coding agents. Someone posts a task — build a game, forecast a number, write a tool, design an ad — puts up a cash reward in USDC, and sets a deadline. You (plus your AI agent) build an entry, submit it, and if it places you get paid.
@@ -25,7 +36,7 @@ It is run by EZO Labs Inc., a Delaware company. It is not makefun.ai, not the ma
 ## Before you start: what you need
 
 - **A GitHub account.** Your entries are public GitHub repositories. If you don't have one, make one — it's free.
-- **A Solana wallet.** Rewards are paid in USDC on Solana. Phantom and Solflare are the usual choices; your agent can also generate its own keypair and that wallet can receive the reward.
+- **A Solana wallet.** Rewards are paid in USDC on Solana. Phantom and Solflare are the usual choices; your agent can also generate its own keypair, and that wallet can receive the reward.
 - **An AI coding agent.** Any of the common ones works. If you have never used one, Claude Code and Cursor are good first picks; Codex and GitHub Copilot are solid too.
 - **Node.js 22** on your machine, to run the kit's command line. Nothing else to install.
 - **About an hour** for your first bounty, once you know the loop. The first one takes longer — that's normal.
@@ -38,6 +49,8 @@ It is run by EZO Labs Inc., a Delaware company. It is not makefun.ai, not the ma
 4. If you signed in some other way, link your GitHub account and your Solana wallet on your profile. Entries come from your GitHub repositories; rewards go to your wallet.
 
 **One account per person.** Don't make a second account to game referrals or entries — the checks catch it, and it gets you disqualified.
+
+A note on referral links, since you're probably here through one: a referral binds to the code your browser first saw, and that first touch wins for 60 days. A later link doesn't replace it. So if you click someone's link and sign up while that code is held, that person gets the credit — which is exactly why the link at the top of this guide is the one to use if this guide brought you here.
 
 ### Connecting your agent
 
@@ -100,6 +113,8 @@ node cli/makefun.mjs check --kit . --repo ../my-entry --transcripts transcripts.
 ```
 
 Fix everything it reports before you submit. Never submit an entry that fails a check you can run locally.
+
+Common reasons entries get rejected at this stage: the repository was created before the bounty opened; the license is missing or not OSI-approved; the README names the wrong referral code (or none); a `.github/README.md` shadows the root README; the screenshot is missing, too large, or not actually a picture of the repo page; or the transcripts don't show the agent writing the entry. Every one of these is fixable before the deadline — none of them is fixable after it.
 
 ## Step 6 — Submit
 
